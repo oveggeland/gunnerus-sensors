@@ -94,11 +94,11 @@ void burstRead(int16_t* acc, int16_t* rate){
 uint32_t false_cnt = 0;
 void imuUpdate(){
   if (drdy){
-    // New data ready
-    // printTime(pkg.sec, pkg.usec, true);
+    // New data ready, timestamp was stored on drdy signal
+    noInterrupts();
     burstRead(pkg.acc, pkg.rate);
-    Serial.println(pkg.acc[2]);
     networkPushData((uint8_t*) &pkg, sizeof(pkg));
+    interrupts();
 
     drdy=false;
   }

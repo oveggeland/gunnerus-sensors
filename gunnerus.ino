@@ -11,9 +11,10 @@ void setup() {
   Serial.begin(115200);
   while (!Serial);
 
-  syncSetup();
-
+  // Network setup must be before sync setup
   networkSetup();
+
+  syncSetup();
 
   imuSetup();
 }
@@ -28,8 +29,6 @@ All function calls in loop() should be as efficient as possible. This is crucial
 - Never use delay()
 */
 void loop() {
-  // IMPORTANT: Keep all functionality in the loop as efficient as påos
-
   syncUpdate();
 
   networkUpdate();
