@@ -2,7 +2,7 @@
 
 #include <Ethernet.h>
 #include <EthernetUdp.h>
-
+#include <SPI.h>
 #include <stdint.h>
 #include <Arduino.h>
 

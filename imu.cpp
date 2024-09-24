@@ -97,6 +97,7 @@ void imuUpdate(){
     // New data ready
     // printTime(pkg.sec, pkg.usec, true);
     burstRead(pkg.acc, pkg.rate);
+    Serial.println(pkg.acc[2]);
     networkPushData((uint8_t*) &pkg, sizeof(pkg));
 
     drdy=false;

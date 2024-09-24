@@ -32,7 +32,7 @@ void loop() {
 
   syncUpdate();
 
-  //networkUpdate();
+  networkUpdate();
 
   imuUpdate();
 }

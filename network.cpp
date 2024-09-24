@@ -11,6 +11,8 @@ uint16_t output_buffer_cnt;
 Starts network module. Called from main setup() function
 */
 void networkSetup(){
+  SPI.begin(); 
+
   // Disable SD card
   pinMode(SD_CARD_PIN, OUTPUT); 
   digitalWrite(SD_CARD_PIN, HIGH);
